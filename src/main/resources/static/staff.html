@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="icon" type="image/png" href="/favicon.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Staff — Amplified SMP</title>
@@ -31,14 +32,12 @@
       <p style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#00c4ef;margin-bottom:0.75rem;">Owner</p>
       <button onclick="showLogin('Owner')" style="background:#09404f;color:#6adbf0;border:1px solid #0a5a6a;padding:0.4rem 1rem;border-radius:6px;font-size:0.8rem;font-weight:700;cursor:pointer;width:100%;">Staff Login</button>
     </div>
-
     <div style="background:rgba(12,16,24,0.85);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:1.25rem 1.5rem;text-align:center;">
       <div style="width:56px;height:56px;border-radius:50%;background:rgba(109,74,255,0.08);border:1px solid rgba(109,74,255,0.18);display:flex;align-items:center;justify-content:center;margin:0 auto 0.75rem;font-family:'Oxanium',sans-serif;font-size:1.2rem;font-weight:800;color:#6d4aff;">A</div>
       <p style="font-family:'Oxanium',sans-serif;font-size:0.95rem;font-weight:700;color:#eaf4ff;margin-bottom:0.2rem;">Login as</p>
       <p style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#6d4aff;margin-bottom:0.75rem;">Admin</p>
       <button onclick="showLogin('Admin')" style="background:#09404f;color:#6adbf0;border:1px solid #0a5a6a;padding:0.4rem 1rem;border-radius:6px;font-size:0.8rem;font-weight:700;cursor:pointer;width:100%;">Staff Login</button>
     </div>
-
     <div style="background:rgba(12,16,24,0.85);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:1.25rem 1.5rem;text-align:center;">
       <div style="width:56px;height:56px;border-radius:50%;background:rgba(109,74,255,0.08);border:1px solid rgba(109,74,255,0.18);display:flex;align-items:center;justify-content:center;margin:0 auto 0.75rem;font-family:'Oxanium',sans-serif;font-size:1.2rem;font-weight:800;color:#6d4aff;">M</div>
       <p style="font-family:'Oxanium',sans-serif;font-size:0.95rem;font-weight:700;color:#eaf4ff;margin-bottom:0.2rem;">Login as</p>
@@ -73,12 +72,23 @@
     </div>
 
     <div style="display:flex;flex-direction:column;gap:0.75rem;">
-      <button style="background:rgba(255,255,255,0.04);color:#d6e8f4;border:1px solid rgba(255,255,255,0.07);padding:0.65rem 1rem;border-radius:8px;font-size:0.85rem;font-weight:700;cursor:pointer;text-align:left;">📋 View Reports</button>
+      <button onclick="viewReports()" style="background:rgba(255,255,255,0.04);color:#d6e8f4;border:1px solid rgba(255,255,255,0.07);padding:0.65rem 1rem;border-radius:8px;font-size:0.85rem;font-weight:700;cursor:pointer;text-align:left;">📋 View Reports</button>
       <button style="background:rgba(255,255,255,0.04);color:#d6e8f4;border:1px solid rgba(255,255,255,0.07);padding:0.65rem 1rem;border-radius:8px;font-size:0.85rem;font-weight:700;cursor:pointer;text-align:left;">🔨 Ban a Player</button>
       <button style="background:rgba(255,255,255,0.04);color:#d6e8f4;border:1px solid rgba(255,255,255,0.07);padding:0.65rem 1rem;border-radius:8px;font-size:0.85rem;font-weight:700;cursor:pointer;text-align:left;">📢 Post Announcement</button>
       <button style="background:rgba(255,255,255,0.04);color:#d6e8f4;border:1px solid rgba(255,255,255,0.07);padding:0.65rem 1rem;border-radius:8px;font-size:0.85rem;font-weight:700;cursor:pointer;text-align:left;">📜 View Logs</button>
     </div>
     <button onclick="logout()" style="margin-top:1.5rem;background:rgba(255,50,50,0.08);color:#ff6666;border:1px solid rgba(255,50,50,0.18);padding:0.5rem 1rem;border-radius:8px;font-size:0.8rem;font-weight:700;cursor:pointer;">Logout</button>
+  </div>
+</div>
+
+<!-- REPORTS PANEL -->
+<div id="reportsPanel" style="display:none;position:relative;z-index:2;max-width:700px;margin:0 auto;padding:80px 1.5rem 4rem;">
+  <div style="background:rgba(12,16,24,0.85);border:1px solid rgba(0,196,239,0.18);border-radius:14px;padding:1.5rem;">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;">
+      <h2 style="font-family:'Oxanium',sans-serif;font-size:1.2rem;font-weight:800;color:#eaf4ff;">📋 Player Reports</h2>
+      <button onclick="backToPanel()" style="background:rgba(255,255,255,0.04);color:#3d5566;border:1px solid rgba(255,255,255,0.07);padding:0.4rem 0.8rem;border-radius:6px;font-size:0.8rem;font-weight:700;cursor:pointer;">← Back</button>
+    </div>
+    <div id="reportsList"></div>
   </div>
 </div>
 
@@ -124,8 +134,46 @@
 
   function logout(){
     document.getElementById('staffPanel').style.display = 'none';
+    document.getElementById('reportsPanel').style.display = 'none';
     document.getElementById('mainContent').style.display = 'block';
     discordLink = '';
+  }
+
+  function backToPanel(){
+    document.getElementById('reportsPanel').style.display = 'none';
+    document.getElementById('staffPanel').style.display = 'block';
+  }
+
+  async function viewReports(){
+    document.getElementById('staffPanel').style.display = 'none';
+    document.getElementById('reportsPanel').style.display = 'block';
+    const list = document.getElementById('reportsList');
+    list.innerHTML = '<p style="color:#3d5566;font-size:0.85rem;">Loading...</p>';
+
+    const res = await fetch('/reports');
+    const reports = await res.json();
+
+    if(reports.length === 0){
+      list.innerHTML = '<p style="color:#3d5566;font-size:0.85rem;">No reports yet.</p>';
+      return;
+    }
+
+    list.innerHTML = '';
+    reports.forEach((report, index) => {
+      const div = document.createElement('div');
+      div.style.cssText = 'background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:1rem;margin-bottom:0.75rem;';
+      div.innerHTML = `
+        <pre style="font-size:0.8rem;color:#7ab8c8;font-family:monospace;white-space:pre-wrap;margin-bottom:0.75rem;">${report}</pre>
+        <button onclick="deleteReport(${index})" style="background:rgba(255,50,50,0.08);color:#ff6666;border:1px solid rgba(255,50,50,0.18);padding:0.4rem 0.8rem;border-radius:6px;font-size:0.78rem;font-weight:700;cursor:pointer;">🗑 Delete Report</button>
+      `;
+      list.appendChild(div);
+    });
+  }
+
+  async function deleteReport(index){
+    if(!confirm('Are you sure you want to delete this report?')) return;
+    await fetch(`/reports?index=${index}`, { method: 'DELETE' });
+    viewReports();
   }
 
   const c = document.getElementById('aStars');
