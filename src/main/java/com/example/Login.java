@@ -37,6 +37,6 @@ public class Login {
         } catch (IOException e) {
             result.put("success", "false");
         }
-        return result;
+        return result; // test
     }
 }
