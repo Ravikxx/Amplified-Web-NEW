@@ -23,6 +23,8 @@ public class Login {
     public Map<String, String> login(@RequestParam String role, @RequestParam String user, @RequestParam String pass) {
         Map<String, String> result = new HashMap<>();
         try {
+            System.out.println("staff.txt path: " + new File("staff.txt").getAbsolutePath());
+            System.out.println("staff.txt exists: " + new File("staff.txt").exists());
             System.out.println("Looking for staff.txt at: " + new File("staff.txt").getAbsolutePath());
             List<String> lines = Files.readAllLines(Path.of("staff.txt"));
             for (String line : lines) {
