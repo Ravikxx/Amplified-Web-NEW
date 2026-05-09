@@ -3,12 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rules — Amplified SMP</title>
+    <title>Rules · Amplified SMP</title>
     <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@700;800&display=swap" rel="stylesheet">
 </head>
 <body style="margin:0;background:#080b11;font-family:sans-serif;color:#d6e8f4;">
 
 <canvas id="aStars" style="position:fixed;inset:0;z-index:0;pointer-events:none;"></canvas>
+
+<!-- FLOATING REPORT BUTTON -->
+<a href="reports.html" style="position:fixed;bottom:1.5rem;right:1.5rem;z-index:200;display:inline-flex;align-items:center;gap:7px;background:linear-gradient(135deg,#3a0a0a,#1e0505);color:#e05a5a;border:1px solid rgba(224,90,90,0.35);padding:0.65rem 1.2rem;border-radius:99px;font-family:'Oxanium',sans-serif;font-size:0.82rem;font-weight:700;text-decoration:none;letter-spacing:0.06em;box-shadow:0 0 18px rgba(224,90,90,0.15);backdrop-filter:blur(10px);">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+    Report
+</a>
 
 <nav style="position:fixed;top:0;left:0;right:0;z-index:100;height:54px;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;background:rgba(8,11,17,0.9);border-bottom:1px solid rgba(255,255,255,0.07);backdrop-filter:blur(16px);">
     <span style="font-family:'Oxanium',sans-serif;font-size:0.9rem;font-weight:700;color:#eaf4ff;">Amplified SMP</span>
@@ -20,69 +26,237 @@
     </div>
 </nav>
 
-<div style="position:relative;z-index:2;max-width:700px;margin:0 auto;padding:80px 1.5rem 4rem;">
+<div style="position:relative;z-index:2;max-width:760px;margin:0 auto;padding:90px 1.5rem 5rem;">
 
-    <h1 style="text-align:center;font-family:'Oxanium',sans-serif;font-size:2.5rem;font-weight:800;background:linear-gradient(135deg,#00c4ef,#6d4aff,#a020c8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:0.5rem;">Rules</h1>
-    <p style="text-align:center;color:#3d5566;margin-bottom:2.5rem;">Break them and face the consequences.</p>
+    <h1 style="font-family:'Oxanium',sans-serif;font-size:2.8rem;font-weight:800;color:#eaf4ff;margin-bottom:0.75rem;">Rules</h1>
+    <p style="font-size:0.88rem;color:#3d5566;line-height:1.75;margin-bottom:3rem;max-width:520px;">Read these before you join. Ignorance isn't an excuse, and "I didn't know" won't save you from a ban. When in doubt, ask staff in Discord before doing the thing.</p>
 
-    <div style="display:flex;flex-direction:column;gap:1rem;">
-
-        <div style="background:rgba(12,16,24,0.85);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:1.25rem 1.5rem;">
-            <p style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#00c4ef;margin-bottom:0.3rem;">Rule 1</p>
-            <p style="font-size:0.95rem;font-weight:700;color:#eaf4ff;margin-bottom:0.3rem;">No Hacking or Cheating</p>
-            <p style="font-size:0.83rem;color:#3d5566;line-height:1.65;">No hacked clients, X-ray, auto clickers, or any unfair advantage. Instant ban, no appeal.</p>
+    <!-- ── GENERAL ── -->
+    <div style="margin-bottom:3rem;">
+        <p style="font-family:'Oxanium',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#00c4ef;margin-bottom:1rem;">General</p>
+        <div style="border-top:1px solid rgba(255,255,255,0.06);">
+            <div style="display:flex;gap:1.25rem;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+                <span style="font-size:0.75rem;color:#2a3d4d;min-width:14px;padding-top:2px;">1</span>
+                <p style="font-size:0.88rem;color:#c8dde8;line-height:1.75;">Be respectful out of character. No targeted insults, ongoing toxicity, or public arguments. Banter is fine; harassment isn't.</p>
+            </div>
+            <div style="display:flex;gap:1.25rem;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+                <span style="font-size:0.75rem;color:#2a3d4d;min-width:14px;padding-top:2px;">2</span>
+                <p style="font-size:0.88rem;color:#c8dde8;line-height:1.75;">No hate speech, discrimination, or real-life threats. Zero tolerance, permanent ban.</p>
+            </div>
+            <div style="display:flex;gap:1.25rem;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+                <span style="font-size:0.75rem;color:#2a3d4d;min-width:14px;padding-top:2px;">3</span>
+                <p style="font-size:0.88rem;color:#c8dde8;line-height:1.75;">Keep content <span style="color:#00c4ef;font-weight:700;">PG-13</span>. No excessive swearing, sexual topics, extreme gore outside scripted scenes, or offensive builds, skins, or names.</p>
+            </div>
+            <div style="display:flex;gap:1.25rem;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+                <span style="font-size:0.75rem;color:#2a3d4d;min-width:14px;padding-top:2px;">4</span>
+                <p style="font-size:0.88rem;color:#c8dde8;line-height:1.75;">Staff decisions on story and enforcement are final. If you disagree, appeal privately — not in public chat.</p>
+            </div>
+            <div style="display:flex;gap:1.25rem;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+                <span style="font-size:0.75rem;color:#2a3d4d;min-width:14px;padding-top:2px;">5</span>
+                <p style="font-size:0.88rem;color:#c8dde8;line-height:1.75;">If you're unsure whether something is allowed, ask staff first.</p>
+            </div>
         </div>
-
-        <div style="background:rgba(12,16,24,0.85);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:1.25rem 1.5rem;">
-            <p style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#00c4ef;margin-bottom:0.3rem;">Rule 2</p>
-            <p style="font-size:0.95rem;font-weight:700;color:#eaf4ff;margin-bottom:0.3rem;">No Griefing</p>
-            <p style="font-size:0.83rem;color:#3d5566;line-height:1.65;">Destroying other players builds is not allowed. CoreProtect logs everything. Grief gets rolled back and you get removed.</p>
-        </div>
-
-        <div style="background:rgba(12,16,24,0.85);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:1.25rem 1.5rem;">
-            <p style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#00c4ef;margin-bottom:0.3rem;">Rule 3</p>
-            <p style="font-size:0.95rem;font-weight:700;color:#eaf4ff;margin-bottom:0.3rem;">Respect Everyone</p>
-            <p style="font-size:0.83rem;color:#3d5566;line-height:1.65;">No racism, harassment, slurs, or targeted hate. This applies in game, Discord, and anywhere tied to the server.</p>
-        </div>
-
-        <div style="background:rgba(12,16,24,0.85);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:1.25rem 1.5rem;">
-            <p style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#00c4ef;margin-bottom:0.3rem;">Rule 4</p>
-            <p style="font-size:0.95rem;font-weight:700;color:#eaf4ff;margin-bottom:0.3rem;">No Spamming or Advertising</p>
-            <p style="font-size:0.83rem;color:#3d5566;line-height:1.65;">Do not spam chat or advertise other servers. This includes DMs to other players.</p>
-        </div>
-
-        <div style="background:rgba(12,16,24,0.85);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:1.25rem 1.5rem;">
-            <p style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#00c4ef;margin-bottom:0.3rem;">Rule 5</p>
-            <p style="font-size:0.95rem;font-weight:700;color:#eaf4ff;margin-bottom:0.3rem;">Follow Staff Instructions</p>
-            <p style="font-size:0.83rem;color:#3d5566;line-height:1.65;">If a staff member tells you to stop doing something, stop. Arguing with staff in public chat will result in a mute or kick.</p>
-        </div>
-
     </div>
+
+    <!-- ── IN-GAME ── -->
+    <div style="margin-bottom:3rem;">
+        <p style="font-family:'Oxanium',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#00c4ef;margin-bottom:1rem;">In-Game</p>
+        <div style="border-top:1px solid rgba(255,255,255,0.06);">
+            <div style="display:flex;gap:1.25rem;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+                <span style="font-size:0.75rem;color:#2a3d4d;min-width:14px;padding-top:2px;">1</span>
+                <p style="font-size:0.88rem;color:#c8dde8;line-height:1.75;">This is a <span style="color:#00c4ef;font-weight:700;">scripted SMP</span>. Some fights, deaths, events, and items are pre-planned. That's not a bug, it's the whole premise.</p>
+            </div>
+            <div style="display:flex;gap:1.25rem;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+                <span style="font-size:0.75rem;color:#2a3d4d;min-width:14px;padding-top:2px;">2</span>
+                <p style="font-size:0.88rem;color:#c8dde8;line-height:1.75;"><span style="color:#00c4ef;font-weight:700;">Don't walk into active scenes.</span> Stay 100+ blocks away unless you're supposed to be there. If you stumble in by accident, leave immediately — don't stick around to watch.</p>
+            </div>
+            <div style="display:flex;gap:1.25rem;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+                <span style="font-size:0.75rem;color:#2a3d4d;min-width:14px;padding-top:2px;">3</span>
+                <p style="font-size:0.88rem;color:#c8dde8;line-height:1.75;">Only use mods, texture packs, or clients <span style="color:#00c4ef;font-weight:700;">explicitly approved by staff</span>. Anything else is an immediate ban, no exceptions.</p>
+            </div>
+            <div style="display:flex;gap:1.25rem;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+                <span style="font-size:0.75rem;color:#2a3d4d;min-width:14px;padding-top:2px;">4</span>
+                <p style="font-size:0.88rem;color:#c8dde8;line-height:1.75;">No griefing, stealing, or PvP outside of staff-approved scripted events. Even if something looks unclaimed or minor — don't touch it without permission.</p>
+            </div>
+            <div style="display:flex;gap:1.25rem;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+                <span style="font-size:0.75rem;color:#2a3d4d;min-width:14px;padding-top:2px;">5</span>
+                <p style="font-size:0.88rem;color:#c8dde8;line-height:1.75;">Duped or exploited items are only allowed if staff gave them to you for a specific plot reason. Otherwise they'll be removed and you'll be punished.</p>
+            </div>
+            <div style="display:flex;gap:1.25rem;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+                <span style="font-size:0.75rem;color:#2a3d4d;min-width:14px;padding-top:2px;">6</span>
+                <p style="font-size:0.88rem;color:#c8dde8;line-height:1.75;">Staged betrayals or deaths only happen when the director gives the signal. Do not go off-script.</p>
+            </div>
+            <div style="display:flex;gap:1.25rem;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+                <span style="font-size:0.75rem;color:#2a3d4d;min-width:14px;padding-top:2px;">7</span>
+                <p style="font-size:0.88rem;color:#c8dde8;line-height:1.75;">Staff can reset, rewind, or rollback anything that breaks the story. <span style="color:#00c4ef;font-weight:700;">Story comes first.</span> Your progress is not exempt.</p>
+            </div>
+            <div style="display:flex;gap:1.25rem;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+                <span style="font-size:0.75rem;color:#2a3d4d;min-width:14px;padding-top:2px;">8</span>
+                <p style="font-size:0.88rem;color:#c8dde8;line-height:1.75;">No spamming in chat, voice, or with commands. Includes emote spam.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── STORY & ROLES ── -->
+    <div style="margin-bottom:3rem;">
+        <p style="font-family:'Oxanium',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#00c4ef;margin-bottom:1rem;">Story &amp; Roles</p>
+        <div style="border-top:1px solid rgba(255,255,255,0.06);">
+            <div style="display:flex;gap:1.25rem;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+                <span style="font-size:0.75rem;color:#2a3d4d;min-width:14px;padding-top:2px;">1</span>
+                <p style="font-size:0.88rem;color:#c8dde8;line-height:1.75;">Play your assigned role to the best of your ability — ally, villain, neutral, whatever it is. Major deviations need staff approval.</p>
+            </div>
+            <div style="display:flex;gap:1.25rem;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+                <span style="font-size:0.75rem;color:#2a3d4d;min-width:14px;padding-top:2px;">2</span>
+                <p style="font-size:0.88rem;color:#c8dde8;line-height:1.75;"><span style="color:#00c4ef;font-weight:700;">Do not leak</span> future plot points, scripts, or behind-the-scenes info — in-game, on Discord, or anywhere else.</p>
+            </div>
+            <div style="display:flex;gap:1.25rem;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+                <span style="font-size:0.75rem;color:#2a3d4d;min-width:14px;padding-top:2px;">3</span>
+                <p style="font-size:0.88rem;color:#c8dde8;line-height:1.75;">Deaths, item losses, and betrayals may be staged. Don't assume everything is real — it's part of the story.</p>
+            </div>
+            <div style="display:flex;gap:1.25rem;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+                <span style="font-size:0.75rem;color:#2a3d4d;min-width:14px;padding-top:2px;">4</span>
+                <p style="font-size:0.88rem;color:#c8dde8;line-height:1.75;">Cooperate when staff ask for a reshoot or camera angle. Getting good footage matters.</p>
+            </div>
+            <div style="display:flex;gap:1.25rem;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+                <span style="font-size:0.75rem;color:#2a3d4d;min-width:14px;padding-top:2px;">5</span>
+                <p style="font-size:0.88rem;color:#c8dde8;line-height:1.75;">Unscripted chaos is only fine if it doesn't wreck a planned story beat or ruin someone else's scene.</p>
+            </div>
+        </div>
+        <!-- Remember callout -->
+        <div style="margin-top:1rem;border-left:3px solid rgba(0,196,239,0.4);background:rgba(0,196,239,0.04);padding:0.85rem 1rem;border-radius:0 8px 8px 0;">
+            <p style="font-size:0.83rem;color:#3d5566;line-height:1.7;"><span style="color:#00c4ef;font-weight:700;">Remember:</span> not everyone knows what's scripted and what isn't — that ambiguity is intentional. Don't break the immersion for others.</p>
+        </div>
+    </div>
+
+    <!-- ── DISCORD ── -->
+    <div style="margin-bottom:3rem;">
+        <p style="font-family:'Oxanium',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#00c4ef;margin-bottom:1rem;">Discord</p>
+        <div style="border-top:1px solid rgba(255,255,255,0.06);">
+            <div style="display:flex;gap:1.25rem;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+                <span style="font-size:0.75rem;color:#2a3d4d;min-width:14px;padding-top:2px;">1</span>
+                <p style="font-size:0.88rem;color:#c8dde8;line-height:1.75;">Keep IC (in-character) and OOC (out-of-character) chat in the right channels. They exist for a reason.</p>
+            </div>
+            <div style="display:flex;gap:1.25rem;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+                <span style="font-size:0.75rem;color:#2a3d4d;min-width:14px;padding-top:2px;">2</span>
+                <p style="font-size:0.88rem;color:#c8dde8;line-height:1.75;">No NSFW content anywhere — images, links, discussions, memes, none of it.</p>
+            </div>
+            <div style="display:flex;gap:1.25rem;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+                <span style="font-size:0.75rem;color:#2a3d4d;min-width:14px;padding-top:2px;">3</span>
+                <p style="font-size:0.88rem;color:#c8dde8;line-height:1.75;">No doxxing or sharing anyone's personal information.</p>
+            </div>
+            <div style="display:flex;gap:1.25rem;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+                <span style="font-size:0.75rem;color:#2a3d4d;min-width:14px;padding-top:2px;">4</span>
+                <p style="font-size:0.88rem;color:#c8dde8;line-height:1.75;">Don't spam — messages, emojis, caps, or pings. One message is enough.</p>
+            </div>
+            <div style="display:flex;gap:1.25rem;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+                <span style="font-size:0.75rem;color:#2a3d4d;min-width:14px;padding-top:2px;">5</span>
+                <p style="font-size:0.88rem;color:#c8dde8;line-height:1.75;">If you're muted or banned, use the proper appeal process. Don't DM staff or post about it in public channels.</p>
+            </div>
+            <div style="display:flex;gap:1.25rem;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+                <span style="font-size:0.75rem;color:#2a3d4d;min-width:14px;padding-top:2px;">6</span>
+                <p style="font-size:0.88rem;color:#c8dde8;line-height:1.75;"><span style="color:#00c4ef;font-weight:700;">English only</span> in public channels (voice and text).</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── PERFORMANCE ── -->
+    <div style="margin-bottom:3rem;">
+        <p style="font-family:'Oxanium',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#00c4ef;margin-bottom:1rem;">Performance</p>
+        <div style="border-top:1px solid rgba(255,255,255,0.06);">
+            <div style="display:flex;gap:1.25rem;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+                <span style="font-size:0.75rem;color:#2a3d4d;min-width:14px;padding-top:2px;">1</span>
+                <p style="font-size:0.88rem;color:#c8dde8;line-height:1.75;">No lag machines or excessive redstone — flying machines, large item sorters, rapid clocks, or huge auto-farms. Keep farms small and efficient.</p>
+            </div>
+            <div style="display:flex;gap:1.25rem;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+                <span style="font-size:0.75rem;color:#2a3d4d;min-width:14px;padding-top:2px;">2</span>
+                <p style="font-size:0.88rem;color:#c8dde8;line-height:1.75;">No more than <span style="color:#00c4ef;font-weight:700;">30 of any single mob type</span> in one area. Staff may cull excess mobs without warning.</p>
+            </div>
+            <div style="display:flex;gap:1.25rem;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+                <span style="font-size:0.75rem;color:#2a3d4d;min-width:14px;padding-top:2px;">3</span>
+                <p style="font-size:0.88rem;color:#c8dde8;line-height:1.75;">No chunk loaders, permanent portals, or anything designed to keep lots of chunks loaded at all times.</p>
+            </div>
+            <div style="display:flex;gap:1.25rem;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+                <span style="font-size:0.75rem;color:#2a3d4d;min-width:14px;padding-top:2px;">4</span>
+                <p style="font-size:0.88rem;color:#c8dde8;line-height:1.75;">If your build tanks the server, staff will ask you to simplify it. If it keeps happening, they'll remove it.</p>
+            </div>
+            <div style="display:flex;gap:1.25rem;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+                <span style="font-size:0.75rem;color:#2a3d4d;min-width:14px;padding-top:2px;">5</span>
+                <p style="font-size:0.88rem;color:#c8dde8;line-height:1.75;">Report lag sources to staff instead of exploiting them.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── PUNISHMENT GUIDELINES ── -->
+    <div style="margin-bottom:3rem;">
+        <div style="background:rgba(12,16,24,0.85);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:1.5rem 1.5rem 0;">
+            <p style="font-family:'Oxanium',sans-serif;font-size:0.9rem;font-weight:800;color:#eaf4ff;margin-bottom:0.3rem;">Punishment Guidelines</p>
+            <p style="font-size:0.8rem;color:#3d5566;margin-bottom:1.25rem;">These are starting points — staff use judgment based on context and history.</p>
+
+            <!-- Table header -->
+            <div style="display:grid;grid-template-columns:2fr 1.4fr 1fr 0.7fr;gap:0.5rem;padding:0.6rem 0;border-bottom:1px solid rgba(0,196,239,0.2);">
+                <span style="font-family:'Oxanium',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#00c4ef;">Offence</span>
+                <span style="font-family:'Oxanium',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#00c4ef;">First Time</span>
+                <span style="font-family:'Oxanium',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#00c4ef;">Repeat</span>
+                <span style="font-family:'Oxanium',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#00c4ef;">Level</span>
+            </div>
+
+            <!-- Rows macro -->
+            <style>
+                .pt-row { display:grid;grid-template-columns:2fr 1.4fr 1fr 0.7fr;gap:0.5rem;padding:0.75rem 0;border-bottom:1px solid rgba(255,255,255,0.05);align-items:center; }
+                .pt-row:last-child { border-bottom:none; }
+                .pt-cell { font-size:0.82rem;color:#7ab8c8;line-height:1.5; }
+                .pt-cell-dim { font-size:0.82rem;color:#3d5566;line-height:1.5; }
+                .badge-low      { font-size:0.72rem;font-weight:700;color:#4ddb9a; }
+                .badge-medium   { font-size:0.72rem;font-weight:700;color:#f0a500; }
+                .badge-high     { font-size:0.72rem;font-weight:700;color:#e05a5a; }
+                .badge-perm     { font-size:0.72rem;font-weight:700;color:#e05a5a; }
+                @media(max-width:540px){
+                    .pt-row { grid-template-columns:1fr 1fr; gap:0.3rem; }
+                    .pt-row > *:nth-child(3), .pt-row > *:nth-child(4) { display:none; }
+                }
+            </style>
+
+            <div class="pt-row"><span class="pt-cell">Minor disrespect / sarcasm</span><span class="pt-cell-dim">Verbal warning</span><span class="pt-cell-dim">1hr timeout</span><span class="badge-low">Low</span></div>
+            <div class="pt-row"><span class="pt-cell">Spamming (chat or Discord)</span><span class="pt-cell-dim">1hr timeout</span><span class="pt-cell-dim">24hr mute</span><span class="badge-low">Low</span></div>
+            <div class="pt-row"><span class="pt-cell">Wrong IC/OOC channel</span><span class="pt-cell-dim">Warning</span><span class="pt-cell-dim">1hr timeout</span><span class="badge-low">Low</span></div>
+            <div class="pt-row"><span class="pt-cell">Minor scene interference</span><span class="pt-cell-dim">Warning + teleport out</span><span class="pt-cell-dim">24hr ban</span><span class="badge-medium">Medium</span></div>
+            <div class="pt-row"><span class="pt-cell">Arguing with staff publicly</span><span class="pt-cell-dim">1hr timeout</span><span class="pt-cell-dim">3 day ban</span><span class="badge-medium">Medium</span></div>
+            <div class="pt-row"><span class="pt-cell">Lag machine / excessive redstone</span><span class="pt-cell-dim">Build removed + warning</span><span class="pt-cell-dim">3 day ban</span><span class="badge-medium">Medium</span></div>
+            <div class="pt-row"><span class="pt-cell">Unapproved mods / clients</span><span class="pt-cell-dim">7 day ban</span><span class="pt-cell-dim">Permanent</span><span class="badge-high">High</span></div>
+            <div class="pt-row"><span class="pt-cell">Griefing / stealing / PvP outside script</span><span class="pt-cell-dim">7 day ban + rollback</span><span class="pt-cell-dim">Permanent</span><span class="badge-high">High</span></div>
+            <div class="pt-row"><span class="pt-cell">Leaking plot points or scripts</span><span class="pt-cell-dim">7 day ban</span><span class="pt-cell-dim">Permanent</span><span class="badge-high">High</span></div>
+            <div class="pt-row"><span class="pt-cell">Duping / exploiting items</span><span class="pt-cell-dim">Items removed + 7 day ban</span><span class="pt-cell-dim">Permanent</span><span class="badge-high">High</span></div>
+            <div class="pt-row"><span class="pt-cell">Harassment / hate speech / threats</span><span class="pt-cell-dim">Permanent ban</span><span class="pt-cell-dim">—</span><span class="badge-perm">Permanent</span></div>
+            <div class="pt-row"><span class="pt-cell">Doxxing / sharing personal info</span><span class="pt-cell-dim">Permanent ban</span><span class="pt-cell-dim">—</span><span class="badge-perm">Permanent</span></div>
+            <div class="pt-row"><span class="pt-cell">NSFW content</span><span class="pt-cell-dim">Permanent ban</span><span class="pt-cell-dim">—</span><span class="badge-perm">Permanent</span></div>
+        </div>
+    </div>
+
+    <p style="text-align:center;font-size:0.74rem;color:#2a3d4d;margin-top:3rem;padding-top:1.5rem;border-top:1px solid rgba(0,196,239,0.06);">© 2026 Amplified SMP · amplifiedsmp.org · Not affiliated with Mojang or Microsoft</p>
 </div>
 
 <script>
     const c = document.getElementById('aStars');
     const x = c.getContext('2d');
     function sizeCanvas(){ c.width = window.innerWidth; c.height = window.innerHeight; }
-    window.addEventListener('resize', sizeCanvas);
-    sizeCanvas();
+    window.addEventListener('resize', sizeCanvas); sizeCanvas();
     const stars = Array.from({length:140},()=>({
-      px:Math.random()*c.width, py:Math.random()*c.height,
-      vx:(Math.random()-0.5)*0.08, vy:Math.random()*0.15+0.03,
-      r:Math.random()*0.9+0.15, a:Math.random()*0.4+0.1, p:Math.random()*Math.PI*2
+        px:Math.random()*c.width, py:Math.random()*c.height,
+        vx:(Math.random()-0.5)*0.08, vy:Math.random()*0.15+0.03,
+        r:Math.random()*0.9+0.15, a:Math.random()*0.4+0.1, p:Math.random()*Math.PI*2
     }));
     function draw(t){
-      x.clearRect(0,0,c.width,c.height);
-      for(const s of stars){
-        const alpha=Math.max(0,s.a+Math.sin(t*0.0005+s.p)*0.09);
-        x.beginPath();x.arc(s.px,s.py,s.r,0,Math.PI*2);
-        x.fillStyle='rgba(200,230,255,'+alpha+')';x.fill();
-        s.px+=s.vx;s.py+=s.vy;
-        if(s.py>c.height+2){s.py=-2;s.px=Math.random()*c.width;}
-        if(s.px>c.width+2)s.px=-2;
-        if(s.px<-2)s.px=c.width+2;
-      }
-      requestAnimationFrame(draw);
+        x.clearRect(0,0,c.width,c.height);
+        for(const s of stars){
+            const alpha=Math.max(0,s.a+Math.sin(t*0.0005+s.p)*0.09);
+            x.beginPath();x.arc(s.px,s.py,s.r,0,Math.PI*2);
+            x.fillStyle='rgba(200,230,255,'+alpha+')';x.fill();
+            s.px+=s.vx;s.py+=s.vy;
+            if(s.py>c.height+2){s.py=-2;s.px=Math.random()*c.width;}
+            if(s.px>c.width+2)s.px=-2;
+            if(s.px<-2)s.px=c.width+2;
+        }
+        requestAnimationFrame(draw);
     }
     requestAnimationFrame(draw);
 </script>
