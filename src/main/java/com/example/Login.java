@@ -23,6 +23,7 @@ public class Login {
     public Map<String, String> login(@RequestParam String role, @RequestParam String user, @RequestParam String pass) {
         Map<String, String> result = new HashMap<>();
         try {
+            System.out.println("Looking for staff.txt at: " + new File("staff.txt").getAbsolutePath());
             List<String> lines = Files.readAllLines(Path.of("staff.txt"));
             for (String line : lines) {
                 String[] parts = line.split(",");
