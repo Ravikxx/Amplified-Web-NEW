@@ -23,6 +23,7 @@ public class Login {
     public Map<String, String> login(@RequestParam String role, @RequestParam String user, @RequestParam String pass) {
         Map<String, String> result = new HashMap<>();
         try {
+
             System.out.println("staff.txt path: " + new File("staff.txt").getAbsolutePath());
             System.out.println("staff.txt exists: " + new File("staff.txt").exists());
             System.out.println("Looking for staff.txt at: " + new File("staff.txt").getAbsolutePath());
@@ -32,6 +33,10 @@ public class Login {
                 if (parts[0].equals(role) && parts[1].equals(user) && parts[2].equals(pass)) {
                     result.put("success", "true");
                     result.put("discord", DISCORD_LINK);
+                    System.out.println("Comparing:");
+                    System.out.println("role: '" + role + "' vs '" + parts[0].trim() + "'");
+                    System.out.println("user: '" + user + "' vs '" + parts[1].trim() + "'");
+                    System.out.println("pass: '" + pass + "' vs '" + parts[2].trim() + "'");
                     return result;
                 }
             }
