@@ -6,44 +6,49 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Map;
 import java.util.HashMap;
 import java.io.*;
-import java.nio.file.*;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @SpringBootApplication
-@RestController
-public class Login {
+    @RestController
+    public class Login {
 
     private static final String DISCORD_LINK = "https://discord.gg/E9QKXJ4QM5";
 
     public static void main(String[] args) {
-        SpringApplication.run(Login.class, args);
+                SpringApplication.run(Login.class, args);
     }
 
     @PostMapping("/login")
-    public Map<String, String> login(@RequestParam String role, @RequestParam String user, @RequestParam String pass) {
-        Map<String, String> result = new HashMap<>();
-        try {
-
-            System.out.println("staff.txt path: " + new File("staff.txt").getAbsolutePath());
-            System.out.println("staff.txt exists: " + new File("staff.txt").exists());
-            System.out.println("Looking for staff.txt at: " + new File("staff.txt").getAbsolutePath());
-            List<String> lines = Files.readAllLines(Path.of("staff.txt"));
-            for (String line : lines) {
-                String[] parts = line.split(",");
-                if (parts[0].equals(role) && parts[1].equals(user) && parts[2].equals(pass)) {
-                    result.put("success", "true");
-                    result.put("discord", DISCORD_LINK);
-                    System.out.println("Comparing:");
-                    System.out.println("role: '" + role + "' vs '" + parts[0].trim() + "'");
-                    System.out.println("user: '" + user + "' vs '" + parts[1].trim() + "'");
-                    System.out.println("pass: '" + pass + "' vs '" + parts[2].trim() + "'");
-                    return result;
-                }
+            public Map<String, String> login(@RequestParam String role, @RequestParam String user, @RequestParam String pass) {
+                        Map<String, String> result = new HashMap<>();
+                        try {
+                                        InputStream is = Login.class.getResourceAsStream("/staff.txt");
+                                        if (is == null) {
+                                                            System.out.println("staff.txt not found in classpath!");
+                                                            result.put("success", "false");
+                                                            return result;
+                                        }
+                                        List<String> lines = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8))
+                                                                .lines().collect(Collectors.toList());
+                                        is.close();
+                                        for (String line : lines) {
+                                                            String[] parts = line.split(",");
+                                                            if (parts.length >= 3
+                                                                                        && parts[0].trim().equals(role)
+                                                                                        && parts[1].trim().equals(user)
+                                                                                        && parts[2].trim().equals(pass)) {
+                                                                                    result.put("success", "true");
+                                                                                    result.put("discord", DISCORD_LINK);
+                                                                                    return result;
+                                                            }
+                                        }
+                                        result.put("success", "false");
+                        } catch (IOException e) {
+                                        System.out.println("Error reading staff.txt: " + e.getMessage());
+                                        result.put("success", "false");
+                        }
+                        return result;
             }
-            result.put("success", "false");
-        } catch (IOException e) {
-            result.put("success", "false");
-        }
-        return result; // adfg
     }
-}
