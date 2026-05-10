@@ -1,205 +1,313 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Staff — Amplified SMP</title>
-  <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Staff — Amplified SMP</title>
+<link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@700;800&display=swap" rel="stylesheet">
 </head>
 <body style="margin:0;background:#080b11;font-family:sans-serif;color:#d6e8f4;">
 
 <canvas id="aStars" style="position:fixed;inset:0;z-index:0;pointer-events:none;"></canvas>
 
 <nav style="position:fixed;top:0;left:0;right:0;z-index:100;height:54px;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;background:rgba(8,11,17,0.9);border-bottom:1px solid rgba(255,255,255,0.07);backdrop-filter:blur(16px);">
-  <span style="font-family:'Oxanium',sans-serif;font-size:0.9rem;font-weight:700;color:#eaf4ff;">Amplified SMP</span>
-  <div style="display:flex;gap:4px;">
-    <a href="index.html" style="font-size:0.83rem;font-weight:600;color:#3d5566;text-decoration:none;padding:0.4rem 0.7rem;">Home</a>
-    <a href="rules.html" style="font-size:0.83rem;font-weight:600;color:#3d5566;text-decoration:none;padding:0.4rem 0.7rem;">Rules</a>
-    <a href="staff.html" style="font-size:0.83rem;font-weight:600;color:#00c4ef;text-decoration:none;padding:0.4rem 0.7rem;">Staff</a>
-    <a href="support.html" style="font-size:0.83rem;font-weight:600;color:#3d5566;text-decoration:none;padding:0.4rem 0.7rem;">Support Us</a>
-  </div>
+<span style="font-family:'Oxanium',sans-serif;font-size:0.9rem;font-weight:700;color:#eaf4ff;">Amplified SMP</span>
+<div style="display:flex;gap:4px;">
+<a href="index.html" style="font-size:0.83rem;font-weight:600;color:#3d5566;text-decoration:none;padding:0.4rem 0.7rem;">Home</a>
+<a href="rules.html" style="font-size:0.83rem;font-weight:600;color:#3d5566;text-decoration:none;padding:0.4rem 0.7rem;">Rules</a>
+<a href="staff.html" style="font-size:0.83rem;font-weight:600;color:#00c4ef;text-decoration:none;padding:0.4rem 0.7rem;">Staff</a>
+<a href="support.html" style="font-size:0.83rem;font-weight:600;color:#3d5566;text-decoration:none;padding:0.4rem 0.7rem;">Support Us</a>
+</div>
 </nav>
 
 <div style="position:relative;z-index:2;max-width:700px;margin:0 auto;padding:80px 1.5rem 4rem;" id="mainContent">
-  <h1 style="text-align:center;font-family:'Oxanium',sans-serif;font-size:2.5rem;font-weight:800;background:linear-gradient(135deg,#00c4ef,#6d4aff,#a020c8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:0.5rem;">Staff</h1>
-  <p style="text-align:center;color:#3d5566;margin-bottom:2.5rem;">The people keeping the server alive.</p>
+<h1 style="text-align:center;font-family:'Oxanium',sans-serif;font-size:2.5rem;font-weight:800;background:linear-gradient(135deg,#00c4ef,#6d4aff,#a020c8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:0.5rem;">Staff</h1>
+<p style="text-align:center;color:#3d5566;margin-bottom:2.5rem;">The people keeping the server alive.</p>
 
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-bottom:2rem;">
-    <div style="background:rgba(12,16,24,0.85);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:1.25rem 1.5rem;text-align:center;">
-      <div style="width:56px;height:56px;border-radius:50%;background:rgba(0,196,239,0.08);border:1px solid rgba(0,196,239,0.18);display:flex;align-items:center;justify-content:center;margin:0 auto 0.75rem;font-family:'Oxanium',sans-serif;font-size:1.2rem;font-weight:800;color:#00c4ef;">O</div>
-      <p style="font-family:'Oxanium',sans-serif;font-size:0.95rem;font-weight:700;color:#eaf4ff;margin-bottom:0.2rem;">Login as</p>
-      <p style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#00c4ef;margin-bottom:0.75rem;">Owner</p>
-      <button onclick="showLogin('Owner')" style="background:#09404f;color:#6adbf0;border:1px solid #0a5a6a;padding:0.4rem 1rem;border-radius:6px;font-size:0.8rem;font-weight:700;cursor:pointer;width:100%;">Staff Login</button>
-    </div>
-    <div style="background:rgba(12,16,24,0.85);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:1.25rem 1.5rem;text-align:center;">
-      <div style="width:56px;height:56px;border-radius:50%;background:rgba(109,74,255,0.08);border:1px solid rgba(109,74,255,0.18);display:flex;align-items:center;justify-content:center;margin:0 auto 0.75rem;font-family:'Oxanium',sans-serif;font-size:1.2rem;font-weight:800;color:#6d4aff;">A</div>
-      <p style="font-family:'Oxanium',sans-serif;font-size:0.95rem;font-weight:700;color:#eaf4ff;margin-bottom:0.2rem;">Login as</p>
-      <p style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#6d4aff;margin-bottom:0.75rem;">Admin</p>
-      <button onclick="showLogin('Admin')" style="background:#09404f;color:#6adbf0;border:1px solid #0a5a6a;padding:0.4rem 1rem;border-radius:6px;font-size:0.8rem;font-weight:700;cursor:pointer;width:100%;">Staff Login</button>
-    </div>
-    <div style="background:rgba(12,16,24,0.85);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:1.25rem 1.5rem;text-align:center;">
-      <div style="width:56px;height:56px;border-radius:50%;background:rgba(109,74,255,0.08);border:1px solid rgba(109,74,255,0.18);display:flex;align-items:center;justify-content:center;margin:0 auto 0.75rem;font-family:'Oxanium',sans-serif;font-size:1.2rem;font-weight:800;color:#6d4aff;">M</div>
-      <p style="font-family:'Oxanium',sans-serif;font-size:0.95rem;font-weight:700;color:#eaf4ff;margin-bottom:0.2rem;">Login as</p>
-      <p style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#6d4aff;margin-bottom:0.75rem;">Moderator</p>
-      <button onclick="showLogin('Moderator')" style="background:#09404f;color:#6adbf0;border:1px solid #0a5a6a;padding:0.4rem 1rem;border-radius:6px;font-size:0.8rem;font-weight:700;cursor:pointer;width:100%;">Staff Login</button>
-    </div>
-  </div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-bottom:2rem;">
+<div style="background:rgba(12,16,24,0.85);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:1.25rem 1.5rem;text-align:center;">
+<div style="width:56px;height:56px;border-radius:50%;background:rgba(0,196,239,0.08);border:1px solid rgba(0,196,239,0.18);display:flex;align-items:center;justify-content:center;margin:0 auto 0.75rem;font-family:'Oxanium',sans-serif;font-size:1.2rem;font-weight:800;color:#00c4ef;">O</div>
+<p style="font-family:'Oxanium',sans-serif;font-size:0.95rem;font-weight:700;color:#eaf4ff;margin-bottom:0.2rem;">Login as</p>
+<p style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#00c4ef;margin-bottom:0.75rem;">Owner</p>
+<button onclick="showLogin('Owner')" style="background:#09404f;color:#6adbf0;border:1px solid #0a5a6a;padding:0.4rem 1rem;border-radius:6px;font-size:0.8rem;font-weight:700;cursor:pointer;width:100%;">Staff Login</button>
+</div>
+<div style="background:rgba(12,16,24,0.85);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:1.25rem 1.5rem;text-align:center;">
+<div style="width:56px;height:56px;border-radius:50%;background:rgba(109,74,255,0.08);border:1px solid rgba(109,74,255,0.18);display:flex;align-items:center;justify-content:center;margin:0 auto 0.75rem;font-family:'Oxanium',sans-serif;font-size:1.2rem;font-weight:800;color:#6d4aff;">A</div>
+<p style="font-family:'Oxanium',sans-serif;font-size:0.95rem;font-weight:700;color:#eaf4ff;margin-bottom:0.2rem;">Login as</p>
+<p style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#6d4aff;margin-bottom:0.75rem;">Admin</p>
+<button onclick="showLogin('Admin')" style="background:#09404f;color:#6adbf0;border:1px solid #0a5a6a;padding:0.4rem 1rem;border-radius:6px;font-size:0.8rem;font-weight:700;cursor:pointer;width:100%;">Staff Login</button>
+</div>
+<div style="background:rgba(12,16,24,0.85);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:1.25rem 1.5rem;text-align:center;">
+<div style="width:56px;height:56px;border-radius:50%;background:rgba(109,74,255,0.08);border:1px solid rgba(109,74,255,0.18);display:flex;align-items:center;justify-content:center;margin:0 auto 0.75rem;font-family:'Oxanium',sans-serif;font-size:1.2rem;font-weight:800;color:#6d4aff;">M</div>
+<p style="font-family:'Oxanium',sans-serif;font-size:0.95rem;font-weight:700;color:#eaf4ff;margin-bottom:0.2rem;">Login as</p>
+<p style="font-size:0.62rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#6d4aff;margin-bottom:0.75rem;">Moderator</p>
+<button onclick="showLogin('Moderator')" style="background:#09404f;color:#6adbf0;border:1px solid #0a5a6a;padding:0.4rem 1rem;border-radius:6px;font-size:0.8rem;font-weight:700;cursor:pointer;width:100%;">Staff Login</button>
+</div>
+</div>
+
+<div style="text-align:center;padding-top:0.5rem;">
+<p style="color:#3d5566;font-size:0.82rem;margin-bottom:0.85rem;">Want to join the staff team?</p>
+<button onclick="showApply()" style="background:rgba(109,74,255,0.1);color:#a07aff;border:1px solid rgba(109,74,255,0.25);padding:0.6rem 1.5rem;border-radius:8px;font-size:0.85rem;font-weight:700;cursor:pointer;">✦ Apply for Staff</button>
+</div>
 </div>
 
 <!-- LOGIN POPUP -->
 <div id="loginBox" style="display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,0.7);align-items:center;justify-content:center;">
-  <div style="background:#0d1117;border:1px solid rgba(0,196,239,0.18);border-radius:14px;padding:2rem;width:100%;max-width:340px;margin:1rem;">
-    <h2 id="loginTitle" style="font-family:'Oxanium',sans-serif;font-size:1.2rem;font-weight:800;color:#eaf4ff;margin-bottom:0.3rem;text-align:center;">Staff Login</h2>
-    <p id="loginRole" style="font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#00c4ef;text-align:center;margin-bottom:1.5rem;"></p>
-    <input id="loginUser" type="text" placeholder="Username" style="width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:8px;padding:0.65rem 1rem;color:#d6e8f4;font-size:0.9rem;margin-bottom:0.75rem;box-sizing:border-box;outline:none;">
-    <input id="loginPass" type="password" placeholder="Password" style="width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:8px;padding:0.65rem 1rem;color:#d6e8f4;font-size:0.9rem;margin-bottom:1rem;box-sizing:border-box;outline:none;">
-    <p id="loginError" style="color:#ff4444;font-size:0.8rem;text-align:center;margin-bottom:0.75rem;display:none;">Wrong username or password.</p>
-    <button onclick="tryLogin()" style="width:100%;background:#09404f;color:#6adbf0;border:1px solid #0a5a6a;padding:0.65rem;border-radius:8px;font-size:0.9rem;font-weight:700;cursor:pointer;margin-bottom:0.75rem;">Login</button>
-    <button onclick="closeLogin()" style="width:100%;background:rgba(255,255,255,0.04);color:#3d5566;border:1px solid rgba(255,255,255,0.07);padding:0.65rem;border-radius:8px;font-size:0.9rem;font-weight:700;cursor:pointer;">Cancel</button>
-  </div>
+<div style="background:#0d1117;border:1px solid rgba(0,196,239,0.18);border-radius:14px;padding:2rem;width:100%;max-width:340px;margin:1rem;">
+<h2 id="loginTitle" style="font-family:'Oxanium',sans-serif;font-size:1.2rem;font-weight:800;color:#eaf4ff;margin-bottom:0.3rem;text-align:center;">Staff Login</h2>
+<p id="loginRole" style="font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#00c4ef;text-align:center;margin-bottom:1.5rem;"></p>
+<input id="loginUser" type="text" placeholder="Username" style="width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:8px;padding:0.65rem 1rem;color:#d6e8f4;font-size:0.9rem;margin-bottom:0.75rem;box-sizing:border-box;outline:none;">
+<input id="loginPass" type="password" placeholder="Password" style="width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:8px;padding:0.65rem 1rem;color:#d6e8f4;font-size:0.9rem;margin-bottom:1rem;box-sizing:border-box;outline:none;">
+<p id="loginError" style="color:#ff4444;font-size:0.8rem;text-align:center;margin-bottom:0.75rem;display:none;">Wrong username or password.</p>
+<button onclick="tryLogin()" style="width:100%;background:#09404f;color:#6adbf0;border:1px solid #0a5a6a;padding:0.65rem;border-radius:8px;font-size:0.9rem;font-weight:700;cursor:pointer;margin-bottom:0.75rem;">Login</button>
+<button onclick="closeLogin()" style="width:100%;background:rgba(255,255,255,0.04);color:#3d5566;border:1px solid rgba(255,255,255,0.07);padding:0.65rem;border-radius:8px;font-size:0.9rem;font-weight:700;cursor:pointer;">Cancel</button>
+</div>
+</div>
+
+<!-- APPLY POPUP -->
+<div id="applyBox" style="display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,0.7);align-items:center;justify-content:center;">
+<div style="background:#0d1117;border:1px solid rgba(109,74,255,0.25);border-radius:14px;padding:2rem;width:100%;max-width:360px;margin:1rem;">
+<h2 style="font-family:'Oxanium',sans-serif;font-size:1.2rem;font-weight:800;color:#eaf4ff;margin-bottom:0.3rem;text-align:center;">Apply for Staff</h2>
+<p style="font-size:0.72rem;color:#3d5566;text-align:center;margin-bottom:1.5rem;">Your application will be reviewed by the owner.</p>
+<label style="font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#3d5566;display:block;margin-bottom:0.4rem;">Role Applying For</label>
+<select id="applyRole" style="width:100%;background:#0d1117;border:1px solid rgba(255,255,255,0.07);border-radius:8px;padding:0.65rem 1rem;color:#d6e8f4;font-size:0.9rem;margin-bottom:0.75rem;box-sizing:border-box;outline:none;cursor:pointer;">
+<option value="Moderator">Moderator</option>
+<option value="Admin">Admin</option>
+</select>
+<label style="font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#3d5566;display:block;margin-bottom:0.4rem;">Username</label>
+<input id="applyUser" type="text" placeholder="Your Minecraft username" style="width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:8px;padding:0.65rem 1rem;color:#d6e8f4;font-size:0.9rem;margin-bottom:0.75rem;box-sizing:border-box;outline:none;">
+<label style="font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#3d5566;display:block;margin-bottom:0.4rem;">Password</label>
+<input id="applyPass" type="password" placeholder="Choose a password" style="width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:8px;padding:0.65rem 1rem;color:#d6e8f4;font-size:0.9rem;margin-bottom:1rem;box-sizing:border-box;outline:none;">
+<p id="applyError" style="color:#ff4444;font-size:0.8rem;text-align:center;margin-bottom:0.75rem;display:none;"></p>
+<p id="applySuccess" style="color:#6adbf0;font-size:0.85rem;text-align:center;margin-bottom:0.75rem;display:none;"></p>
+<button id="applySubmitBtn" onclick="submitApply()" style="width:100%;background:rgba(109,74,255,0.15);color:#a07aff;border:1px solid rgba(109,74,255,0.3);padding:0.65rem;border-radius:8px;font-size:0.9rem;font-weight:700;cursor:pointer;margin-bottom:0.75rem;">Submit Application</button>
+<button onclick="closeApply()" style="width:100%;background:rgba(255,255,255,0.04);color:#3d5566;border:1px solid rgba(255,255,255,0.07);padding:0.65rem;border-radius:8px;font-size:0.9rem;font-weight:700;cursor:pointer;">Close</button>
+</div>
 </div>
 
 <!-- STAFF PANEL -->
 <div id="staffPanel" style="display:none;position:relative;z-index:2;max-width:700px;margin:0 auto;padding:80px 1.5rem 4rem;">
-  <div style="background:rgba(12,16,24,0.85);border:1px solid rgba(0,196,239,0.18);border-radius:14px;padding:1.5rem;">
-    <h2 style="font-family:'Oxanium',sans-serif;font-size:1.2rem;font-weight:800;color:#eaf4ff;margin-bottom:0.3rem;">Staff Panel</h2>
-    <p id="panelRole" style="font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#00c4ef;margin-bottom:1.5rem;"></p>
+<div style="background:rgba(12,16,24,0.85);border:1px solid rgba(0,196,239,0.18);border-radius:14px;padding:1.5rem;">
+<h2 style="font-family:'Oxanium',sans-serif;font-size:1.2rem;font-weight:800;color:#eaf4ff;margin-bottom:0.3rem;">Staff Panel</h2>
+<p id="panelRole" style="font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#00c4ef;margin-bottom:1.5rem;"></p>
 
-    <div style="background:rgba(0,196,239,0.05);border:1px solid rgba(0,196,239,0.12);border-radius:8px;padding:1rem;margin-bottom:1rem;display:flex;align-items:center;justify-content:space-between;">
-      <span style="font-size:0.85rem;color:#3d5566;">Staff Discord Server</span>
-      <button id="copyBtn" onclick="copyDiscord()" style="background:#09404f;color:#6adbf0;border:1px solid #0a5a6a;padding:0.4rem 0.8rem;border-radius:6px;font-size:0.8rem;font-weight:700;cursor:pointer;">Copy Invite</button>
-    </div>
+<div style="background:rgba(0,196,239,0.05);border:1px solid rgba(0,196,239,0.12);border-radius:8px;padding:1rem;margin-bottom:1rem;display:flex;align-items:center;justify-content:space-between;">
+<span style="font-size:0.85rem;color:#3d5566;">Staff Discord Server</span>
+<button id="copyBtn" onclick="copyDiscord()" style="background:#09404f;color:#6adbf0;border:1px solid #0a5a6a;padding:0.4rem 0.8rem;border-radius:6px;font-size:0.8rem;font-weight:700;cursor:pointer;">Copy Invite</button>
+</div>
 
-    <div style="display:flex;flex-direction:column;gap:0.75rem;">
-      <button onclick="viewReports()" style="background:rgba(255,255,255,0.04);color:#d6e8f4;border:1px solid rgba(255,255,255,0.07);padding:0.65rem 1rem;border-radius:8px;font-size:0.85rem;font-weight:700;cursor:pointer;text-align:left;">📋 View Reports</button>
-      <button style="background:rgba(255,255,255,0.04);color:#d6e8f4;border:1px solid rgba(255,255,255,0.07);padding:0.65rem 1rem;border-radius:8px;font-size:0.85rem;font-weight:700;cursor:pointer;text-align:left;">🔨 Ban a Player</button>
-      <button style="background:rgba(255,255,255,0.04);color:#d6e8f4;border:1px solid rgba(255,255,255,0.07);padding:0.65rem 1rem;border-radius:8px;font-size:0.85rem;font-weight:700;cursor:pointer;text-align:left;">📢 Post Announcement</button>
-      <button style="background:rgba(255,255,255,0.04);color:#d6e8f4;border:1px solid rgba(255,255,255,0.07);padding:0.65rem 1rem;border-radius:8px;font-size:0.85rem;font-weight:700;cursor:pointer;text-align:left;">📜 View Logs</button>
-    </div>
-    <button onclick="logout()" style="margin-top:1.5rem;background:rgba(255,50,50,0.08);color:#ff6666;border:1px solid rgba(255,50,50,0.18);padding:0.5rem 1rem;border-radius:8px;font-size:0.8rem;font-weight:700;cursor:pointer;">Logout</button>
-  </div>
+<div style="display:flex;flex-direction:column;gap:0.75rem;">
+<button onclick="viewReports()" style="background:rgba(255,255,255,0.04);color:#d6e8f4;border:1px solid rgba(255,255,255,0.07);padding:0.65rem 1rem;border-radius:8px;font-size:0.85rem;font-weight:700;cursor:pointer;text-align:left;">📋 View Reports</button>
+<button id="pendingBtn" onclick="viewPending()" style="display:none;background:rgba(109,74,255,0.07);color:#a07aff;border:1px solid rgba(109,74,255,0.2);padding:0.65rem 1rem;border-radius:8px;font-size:0.85rem;font-weight:700;cursor:pointer;text-align:left;">👥 Pending Staff Applications</button>
+<button style="background:rgba(255,255,255,0.04);color:#d6e8f4;border:1px solid rgba(255,255,255,0.07);padding:0.65rem 1rem;border-radius:8px;font-size:0.85rem;font-weight:700;cursor:pointer;text-align:left;">🔨 Ban a Player</button>
+<button style="background:rgba(255,255,255,0.04);color:#d6e8f4;border:1px solid rgba(255,255,255,0.07);padding:0.65rem 1rem;border-radius:8px;font-size:0.85rem;font-weight:700;cursor:pointer;text-align:left;">📢 Post Announcement</button>
+<button style="background:rgba(255,255,255,0.04);color:#d6e8f4;border:1px solid rgba(255,255,255,0.07);padding:0.65rem 1rem;border-radius:8px;font-size:0.85rem;font-weight:700;cursor:pointer;text-align:left;">📜 View Logs</button>
+</div>
+<button onclick="logout()" style="margin-top:1.5rem;background:rgba(255,50,50,0.08);color:#ff6666;border:1px solid rgba(255,50,50,0.18);padding:0.5rem 1rem;border-radius:8px;font-size:0.8rem;font-weight:700;cursor:pointer;">Logout</button>
+</div>
 </div>
 
 <!-- REPORTS PANEL -->
 <div id="reportsPanel" style="display:none;position:relative;z-index:2;max-width:700px;margin:0 auto;padding:80px 1.5rem 4rem;">
-  <div style="background:rgba(12,16,24,0.85);border:1px solid rgba(0,196,239,0.18);border-radius:14px;padding:1.5rem;">
-    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;">
-      <h2 style="font-family:'Oxanium',sans-serif;font-size:1.2rem;font-weight:800;color:#eaf4ff;">📋 Player Reports</h2>
-      <button onclick="backToPanel()" style="background:rgba(255,255,255,0.04);color:#3d5566;border:1px solid rgba(255,255,255,0.07);padding:0.4rem 0.8rem;border-radius:6px;font-size:0.8rem;font-weight:700;cursor:pointer;">← Back</button>
-    </div>
-    <div id="reportsList"></div>
-  </div>
+<div style="background:rgba(12,16,24,0.85);border:1px solid rgba(0,196,239,0.18);border-radius:14px;padding:1.5rem;">
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;">
+<h2 style="font-family:'Oxanium',sans-serif;font-size:1.2rem;font-weight:800;color:#eaf4ff;">📋 Player Reports</h2>
+<button onclick="backToPanel()" style="background:rgba(255,255,255,0.04);color:#3d5566;border:1px solid rgba(255,255,255,0.07);padding:0.4rem 0.8rem;border-radius:6px;font-size:0.8rem;font-weight:700;cursor:pointer;">← Back</button>
+</div>
+<div id="reportsList"></div>
+</div>
+</div>
+
+<!-- PENDING STAFF PANEL -->
+<div id="pendingPanel" style="display:none;position:relative;z-index:2;max-width:700px;margin:0 auto;padding:80px 1.5rem 4rem;">
+<div style="background:rgba(12,16,24,0.85);border:1px solid rgba(109,74,255,0.2);border-radius:14px;padding:1.5rem;">
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;">
+<h2 style="font-family:'Oxanium',sans-serif;font-size:1.2rem;font-weight:800;color:#eaf4ff;">👥 Pending Staff Applications</h2>
+<button onclick="backToPanel()" style="background:rgba(255,255,255,0.04);color:#3d5566;border:1px solid rgba(255,255,255,0.07);padding:0.4rem 0.8rem;border-radius:6px;font-size:0.8rem;font-weight:700;cursor:pointer;">← Back</button>
+</div>
+<div id="pendingList"></div>
+</div>
 </div>
 
 <script>
-  let currentRole = '';
-  let discordLink = '';
+let currentRole = '';
+let discordLink = '';
 
-  function showLogin(role){
-    currentRole = role;
-    document.getElementById('loginTitle').textContent = role + ' Login';
-    document.getElementById('loginRole').textContent = role;
-    document.getElementById('loginError').style.display = 'none';
-    document.getElementById('loginUser').value = '';
-    document.getElementById('loginPass').value = '';
-    document.getElementById('loginBox').style.display = 'flex';
-  }
+function showLogin(role){
+currentRole = role;
+document.getElementById('loginTitle').textContent = role + ' Login';
+document.getElementById('loginRole').textContent = role;
+document.getElementById('loginError').style.display = 'none';
+document.getElementById('loginUser').value = '';
+document.getElementById('loginPass').value = '';
+document.getElementById('loginBox').style.display = 'flex';
+}
+function closeLogin(){ document.getElementById('loginBox').style.display = 'none'; }
 
-  function closeLogin(){
-    document.getElementById('loginBox').style.display = 'none';
-  }
+async function tryLogin(){
+const user = document.getElementById('loginUser').value;
+const pass = document.getElementById('loginPass').value;
+const res = await fetch('/login?role='+encodeURIComponent(currentRole)+'&user='+encodeURIComponent(user)+'&pass='+encodeURIComponent(pass), { method: 'POST' });
+const data = await res.json();
+if(data.success === 'true'){
+discordLink = data.discord;
+closeLogin();
+document.getElementById('mainContent').style.display = 'none';
+document.getElementById('staffPanel').style.display = 'block';
+document.getElementById('panelRole').textContent = 'Logged in as ' + currentRole;
+document.getElementById('pendingBtn').style.display = currentRole === 'Owner' ? 'block' : 'none';
+} else {
+document.getElementById('loginError').style.display = 'block';
+}
+}
 
-  async function tryLogin(){
-    const user = document.getElementById('loginUser').value;
-    const pass = document.getElementById('loginPass').value;
-    const res = await fetch(`/login?role=${currentRole}&user=${user}&pass=${pass}`, { method: "POST" });
-    const data = await res.json();
-    if(data.success === "true"){
-      discordLink = data.discord;
-      closeLogin();
-      document.getElementById('mainContent').style.display = 'none';
-      document.getElementById('staffPanel').style.display = 'block';
-      document.getElementById('panelRole').textContent = 'Logged in as ' + currentRole;
-    } else {
-      document.getElementById('loginError').style.display = 'block';
-    }
-  }
+function copyDiscord(){
+navigator.clipboard.writeText(discordLink);
+document.getElementById('copyBtn').textContent = 'Copied!';
+setTimeout(() => document.getElementById('copyBtn').textContent = 'Copy Invite', 2000);
+}
 
-  function copyDiscord(){
-    navigator.clipboard.writeText(discordLink);
-    document.getElementById('copyBtn').textContent = 'Copied!';
-    setTimeout(() => document.getElementById('copyBtn').textContent = 'Copy Invite', 2000);
-  }
+function logout(){
+document.getElementById('staffPanel').style.display = 'none';
+document.getElementById('reportsPanel').style.display = 'none';
+document.getElementById('pendingPanel').style.display = 'none';
+document.getElementById('mainContent').style.display = 'block';
+discordLink = '';
+}
 
-  function logout(){
-    document.getElementById('staffPanel').style.display = 'none';
-    document.getElementById('reportsPanel').style.display = 'none';
-    document.getElementById('mainContent').style.display = 'block';
-    discordLink = '';
-  }
+function backToPanel(){
+document.getElementById('reportsPanel').style.display = 'none';
+document.getElementById('pendingPanel').style.display = 'none';
+document.getElementById('staffPanel').style.display = 'block';
+}
 
-  function backToPanel(){
-    document.getElementById('reportsPanel').style.display = 'none';
-    document.getElementById('staffPanel').style.display = 'block';
-  }
+async function viewReports(){
+document.getElementById('staffPanel').style.display = 'none';
+document.getElementById('reportsPanel').style.display = 'block';
+const list = document.getElementById('reportsList');
+list.innerHTML = '<p style="color:#3d5566;font-size:0.85rem;">Loading...</p>';
+const res = await fetch('/reports');
+const reports = await res.json();
+if(reports.length === 0){ list.innerHTML = '<p style="color:#3d5566;font-size:0.85rem;">No reports yet.</p>'; return; }
+list.innerHTML = '';
+reports.forEach((report, index) => {
+const div = document.createElement('div');
+div.style.cssText = 'background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:1rem;margin-bottom:0.75rem;';
+div.innerHTML = `<pre style="font-size:0.8rem;color:#7ab8c8;font-family:monospace;white-space:pre-wrap;margin-bottom:0.75rem;">${report}</pre><button onclick="deleteReport(${index})" style="background:rgba(255,50,50,0.08);color:#ff6666;border:1px solid rgba(255,50,50,0.18);padding:0.4rem 0.8rem;border-radius:6px;font-size:0.78rem;font-weight:700;cursor:pointer;">🗑 Delete Report</button>`;
+list.appendChild(div);
+});
+}
 
-  async function viewReports(){
-    document.getElementById('staffPanel').style.display = 'none';
-    document.getElementById('reportsPanel').style.display = 'block';
-    const list = document.getElementById('reportsList');
-    list.innerHTML = '<p style="color:#3d5566;font-size:0.85rem;">Loading...</p>';
+async function deleteReport(index){
+if(!confirm('Delete this report?')) return;
+await fetch('/reports?index='+index, { method: 'DELETE' });
+viewReports();
+}
 
-    const res = await fetch('/reports');
-    const reports = await res.json();
+async function viewPending(){
+document.getElementById('staffPanel').style.display = 'none';
+document.getElementById('pendingPanel').style.display = 'block';
+const list = document.getElementById('pendingList');
+list.innerHTML = '<p style="color:#3d5566;font-size:0.85rem;">Loading...</p>';
+const res = await fetch('/staff/pending');
+const apps = await res.json();
+if(apps.length === 0){ list.innerHTML = '<p style="color:#3d5566;font-size:0.85rem;">No pending applications.</p>'; return; }
+list.innerHTML = '';
+apps.forEach((app, index) => {
+const div = document.createElement('div');
+div.style.cssText = 'background:rgba(0,0,0,0.3);border:1px solid rgba(109,74,255,0.15);border-radius:10px;padding:1rem;margin-bottom:0.75rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem;';
+div.innerHTML = `
+<div>
+<p style="font-family:'Oxanium',sans-serif;font-size:0.95rem;font-weight:700;color:#eaf4ff;margin:0 0 0.2rem;">${app.user}</p>
+<p style="font-size:0.68rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#a07aff;margin:0;">Applying as ${app.role}</p>
+</div>
+<div style="display:flex;gap:0.5rem;">
+<button onclick="approveStaff(${index})" style="background:rgba(0,196,100,0.1);color:#00c878;border:1px solid rgba(0,196,100,0.25);padding:0.4rem 0.9rem;border-radius:6px;font-size:0.8rem;font-weight:700;cursor:pointer;">✓ Accept</button>
+<button onclick="declineStaff(${index})" style="background:rgba(255,50,50,0.08);color:#ff6666;border:1px solid rgba(255,50,50,0.18);padding:0.4rem 0.9rem;border-radius:6px;font-size:0.8rem;font-weight:700;cursor:pointer;">✕ Decline</button>
+</div>
+`;
+list.appendChild(div);
+});
+}
 
-    if(reports.length === 0){
-      list.innerHTML = '<p style="color:#3d5566;font-size:0.85rem;">No reports yet.</p>';
-      return;
-    }
+async function approveStaff(index){
+await fetch('/staff/approve?index='+index, { method: 'POST' });
+viewPending();
+}
 
-    list.innerHTML = '';
-    reports.forEach((report, index) => {
-      const div = document.createElement('div');
-      div.style.cssText = 'background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:1rem;margin-bottom:0.75rem;';
-      div.innerHTML = `
-        <pre style="font-size:0.8rem;color:#7ab8c8;font-family:monospace;white-space:pre-wrap;margin-bottom:0.75rem;">${report}</pre>
-        <button onclick="deleteReport(${index})" style="background:rgba(255,50,50,0.08);color:#ff6666;border:1px solid rgba(255,50,50,0.18);padding:0.4rem 0.8rem;border-radius:6px;font-size:0.78rem;font-weight:700;cursor:pointer;">🗑 Delete Report</button>
-      `;
-      list.appendChild(div);
-    });
-  }
+async function declineStaff(index){
+if(!confirm('Decline this application?')) return;
+await fetch('/staff/decline?index='+index, { method: 'POST' });
+viewPending();
+}
 
-  async function deleteReport(index){
-    if(!confirm('Are you sure you want to delete this report?')) return;
-    await fetch(`/reports?index=${index}`, { method: 'DELETE' });
-    viewReports();
-  }
+function showApply(){
+document.getElementById('applyUser').value = '';
+document.getElementById('applyPass').value = '';
+document.getElementById('applyRole').value = 'Moderator';
+document.getElementById('applyError').style.display = 'none';
+document.getElementById('applySuccess').style.display = 'none';
+document.getElementById('applySubmitBtn').style.display = 'block';
+document.getElementById('applyBox').style.display = 'flex';
+}
+function closeApply(){ document.getElementById('applyBox').style.display = 'none'; }
 
-  const c = document.getElementById('aStars');
-  const x = c.getContext('2d');
-  function sizeCanvas(){ c.width = window.innerWidth; c.height = window.innerHeight; }
-  window.addEventListener('resize', sizeCanvas);
-  sizeCanvas();
-  const stars = Array.from({length:140},()=>({
-    px:Math.random()*c.width, py:Math.random()*c.height,
-    vx:(Math.random()-0.5)*0.08, vy:Math.random()*0.15+0.03,
-    r:Math.random()*0.9+0.15, a:Math.random()*0.4+0.1, p:Math.random()*Math.PI*2
-  }));
-  function draw(t){
-    x.clearRect(0,0,c.width,c.height);
-    for(const s of stars){
-      const alpha=Math.max(0,s.a+Math.sin(t*0.0005+s.p)*0.09);
-      x.beginPath();x.arc(s.px,s.py,s.r,0,Math.PI*2);
-      x.fillStyle='rgba(200,230,255,'+alpha+')';x.fill();
-      s.px+=s.vx;s.py+=s.vy;
-      if(s.py>c.height+2){s.py=-2;s.px=Math.random()*c.width;}
-      if(s.px>c.width+2)s.px=-2;
-      if(s.px<-2)s.px=c.width+2;
-    }
-    requestAnimationFrame(draw);
-  }
-  requestAnimationFrame(draw);
+async function submitApply(){
+const role = document.getElementById('applyRole').value;
+const user = document.getElementById('applyUser').value.trim();
+const pass = document.getElementById('applyPass').value.trim();
+const errEl = document.getElementById('applyError');
+const okEl = document.getElementById('applySuccess');
+errEl.style.display = 'none';
+okEl.style.display = 'none';
+if(!user || !pass){
+errEl.textContent = 'Username and password are required.';
+errEl.style.display = 'block';
+return;
+}
+const res = await fetch('/staff/apply', {
+method: 'POST',
+headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+body: new URLSearchParams({ role, user, pass })
+});
+const data = await res.json();
+if(data.success === 'true'){
+okEl.textContent = '✓ Application submitted! The owner will review it soon.';
+okEl.style.display = 'block';
+document.getElementById('applySubmitBtn').style.display = 'none';
+document.getElementById('applyUser').value = '';
+document.getElementById('applyPass').value = '';
+} else {
+errEl.textContent = data.error || 'Something went wrong. Try again.';
+errEl.style.display = 'block';
+}
+}
+
+const c = document.getElementById('aStars');
+const x = c.getContext('2d');
+function sizeCanvas(){ c.width = window.innerWidth; c.height = window.innerHeight; }
+window.addEventListener('resize', sizeCanvas);
+sizeCanvas();
+const stars = Array.from({length:140},()=>({
+px:Math.random()*c.width, py:Math.random()*c.height,
+vx:(Math.random()-0.5)*0.08, vy:Math.random()*0.15+0.03,
+r:Math.random()*0.9+0.15, a:Math.random()*0.4+0.1, p:Math.random()*Math.PI*2
+}));
+function draw(t){
+x.clearRect(0,0,c.width,c.height);
+for(const s of stars){
+const alpha=Math.max(0,s.a+Math.sin(t*0.0005+s.p)*0.09);
+x.beginPath();x.arc(s.px,s.py,s.r,0,Math.PI*2);
+x.fillStyle='rgba(200,230,255,'+alpha+')';x.fill();
+s.px+=s.vx;s.py+=s.vy;
+if(s.py>c.height+2){s.py=-2;s.px=Math.random()*c.width;}
+if(s.px>c.width+2)s.px=-2;
+if(s.px<-2)s.px=c.width+2;
+}
+requestAnimationFrame(draw);
+}
+requestAnimationFrame(draw);
 </script>
 
 </body>
