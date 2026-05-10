@@ -11,10 +11,10 @@
         body { background: #080b11; font-family: sans-serif; color: #d6e8f4; min-height: 100vh; }
         nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: 54px; display: flex; align-items: center; justify-content: space-between; padding: 0 1.5rem; background: rgba(8,11,17,0.9); border-bottom: 1px solid rgba(255,255,255,0.07); backdrop-filter: blur(16px); }
         nav .logo { font-family: 'Oxanium', sans-serif; font-size: 0.9rem; font-weight: 700; color: #eaf4ff; }
-        nav div { display: flex; gap: 4px; }
+        nav div { display: flex; gap: 4px; }h
         nav a { font-size: 0.83rem; font-weight: 600; text-decoration: none; padding: 0.4rem 0.7rem; color: #3d5566; }
         nav a.active { color: #00c4ef; }
-        #aStars { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+        #aStars { position: fixed; inset: 0; z-index: 0; pointer-events: none; }h
         main { position: relative; z-index: 2; max-width: 640px; margin: 0 auto; padding: 100px 1.5rem 5rem; }
         .page-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #00c4ef; background: rgba(0,196,239,0.08); border: 1px solid rgba(0,196,239,0.18); padding: 0.3rem 0.85rem; border-radius: 99px; display: inline-block; margin-bottom: 1rem; }
         h1 { font-family: 'Oxanium', sans-serif; font-size: 2.4rem; font-weight: 800; background: linear-gradient(135deg, #00c4ef, #6d4aff, #a020c8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 0.5rem; }
@@ -158,11 +158,17 @@
             Formatted Report
             <span>Paste into Discord</span>
         </div>
-
+        <textarea id="copyOutput" readonly></textarea>
+        <div class="copy-actions">
+            <button class="btn-copy" id="copyBtn" onclick="doCopy()">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                Copy to Clipboard
+            </button>
             <button class="btn-new" onclick="resetForm()">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
                 New Report
             </button>
+        </div>
         </div>
     </div>
 
